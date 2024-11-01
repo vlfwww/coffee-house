@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1360px;
+    margin: 0 auto;
+    background-color: #E1D4C9;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    font: 600 16px Inter;
+    color: #403F3D;
+    padding: 20px 0;
+    align-items: center;
+}
+header .links{
+    display: flex;
+    gap:40px;
+}
+header .link_menu{
+    display: flex;
+    gap:10px;
+}
+header .link_menu img{
+    width: 20px;
+    height: 20px;
+}
+header .links p:hover{
+    text-decoration: underline;
+}
+main .previe {
+    background-image: url(../images/img-hero.jpg);
+    height: 644px;
+    max-width: 1360px;
+    padding: 100px;
+    border-radius: 40px;
+    font:600 50px Inter;
+    color: #E1D4C9;
+}
+main .previe .text{
+    width: 530px;
+}
+main .previe span{
+    color: #B0907A;
+}
+main .previe p{
+    font: 400 16px Inter;
+    margin: 40px 0;
+}
+main .previe button {
+    background-color: #E1D4C9;
+    width: 200px;
+    height: 64px;
+    padding: 20px 78px; 
+    border-radius: 100px;
+    border: 0;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    position: relative; 
+}
+
+.previe button:hover::after {
+    content: url(../images/coffee-cup.png);
+    position: absolute; 
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+main .coffee_slider , main .pictures{
+    margin-top: 100px;
+}
+main .coffee_slider h2 , main .pictures h2 , main .apps .left h2{
+    font: 600 60px Inter; 
+    color: #403F3D
+}
+main .coffee_slider h2 , main .pictures h2{
+    text-align: center;
+}
+main .coffee_slider h2 span , main .pictures h2 span , main .apps .left h2 span{
+    color:#B0907A;
+}
+main .coffee_slider .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #403F3D;
+}
+main .coffee_slider .right , main .coffee_slider .left{
+    align-items: center;
+}
+main .coffee_slider .right button , main .coffee_slider .left button{
+    background-color: #fff;
+}
+main .coffee_slider .right button:hover , main .coffee_slider .left button:hover{
+    background-color: #665F55;
+    color: #E1D4C9;
+}
+main .coffee_slider .center p:first-of-type , main .coffee_slider .center p:last-of-type
+{
+    text-align: center;
+    font: 600 24px Inter;
+    margin: 20px 0;
+}
+main .coffee_slider .center img{
+    width: 480px;
+    height: 480px;
+}
+main .coffee_slider .center p:nth-last-of-type(2)
+{
+    font: 400 16px Inter;
+    text-align: center;
+}
+main .coffee_slider .center .center_img{
+   
+    text-align: center;
+}
+main .coffee_slider .center  .line{
+    display: flex;
+    gap:12px;
+    width: 140px;
+    margin: 40px auto;
+    height: 4px;
+}
+main .coffee_slider .center  .line p{
+    border-bottom:4px solid  #C1B6AD ;
+    width: 40px;
+    border-radius: 100px;
+}
+main .coffee_slider .center  .line p:first-of-type{
+    border-bottom:4px solid #665F55 ;
+}
+main .coffee_slider .center  .line p:nth-of-type(2)
+{
+    margin-top: 20px;
+    
+}
+main .pictures .wrapper{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 40px;
+}
+main .pictures .wrapper div div{
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+main .pictures .wrapper .img1 , main .pictures .wrapper .img4{
+    width: 660px;
+    height: 590px;
+    overflow: hidden;
+ }
+
+ main .pictures .wrapper .img2 , main .pictures .wrapper .img3{
+    width: 660px;
+    height: 430px;
+    overflow: hidden;
+}
+main .apps{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+main .apps .left{
+    margin-top: 145px;
+    max-width: 630px;
+}
+main .apps .left p{
+    font: 400 16px Inter;
+    color:#403F3D;
+}
+main .apps .left .buttons{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+main .apps .left .buttons button{
+    border: 1px solid #665F55;
+    border-radius: 50px;
+    font: 600 10px Inter;
+    text-align: center;
+    color: #403F3D;
+    background-color: #fff;
+    width: 200px;
+    height: 64px;
+    display: flex;
+    padding: 14px;
+    align-items: center;
+}
+main .apps .left .buttons button:hover{
+    background-color: #665F55;
+}
+main .apps .left .buttons button:hover p{
+    color: #E1D4C9;
+}
+main .apps .left .buttons button p span{
+    font-size: 16px ;
+    font-weight: 700;
+}
+footer{
+    background-color: #665F55;
+    border-radius: 40px;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .left{
+    max-width: 530px;
+}
+footer .left .buttons{
+    margin-top: 40px;
+}
+footer .left .buttons button , main .coffee_slider button{
+   width: 60px;
+   height: 60px;
+   border-radius: 100px;
+   border: 1px solid #C1B6AD;
+   background-color: transparent;
+   color:#C1B6AD;
+   font-size: 20px;
+}
+main .coffee_slider button{
+    color: #665F55;
+    border-color: #665F55;
+}
+footer .left h2{
+    font: 600 60px Inter;
+    color: #E1D4C9;
+}
+footer .left h2 span{
+    color: #B0907A;
+    font-style: italic;
+}
+footer .right{
+    font: 600 24px Inter;
+    color: #E1D4C9;
+    width: 530px;
+    text-align: left;
+}
+footer .right h4{
+    margin-bottom: 40px;
+}
+footer .right p{
+    font-size: 16px;
+    font-weight: 300;
+}
+footer .right p:nth-last-of-type(2)
+{
+    margin: 16px 0;
+}
+footer .right p i{
+    margin-right: 10px;
+}
+footer .right p:hover{
+    text-decoration: underline;
+}
+
