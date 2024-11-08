@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    width: 1360px;
+    max-width: 1360px;
     margin: 0 auto;
     background-color: #E1D4C9;
 }
@@ -29,10 +29,13 @@ header{
     }
     & .link_wrapper{
         color: #403F3D;
-            text-decoration: none;
+        text-decoration: none;
     }
     & .links p:hover{
         text-decoration: underline;
+    }
+    & .active{
+        display: none;
     }
 }
 
@@ -133,7 +136,7 @@ main .coffee_slider button{
     border-color: #665F55;
  }
 main .coffee_slider .center img{
-    width: 480px;
+    max-width: 480px;
     height: 480px;
 }
 main .coffee_slider .center p:nth-last-of-type(2)
@@ -175,13 +178,13 @@ main .pictures .wrapper{
       }
 }
 main .pictures .wrapper .img1 , main .pictures .wrapper .img4{
-    width: 660px;
+    max-width: 660px;
     height: 590px;
     overflow: hidden;
  }
 
  main .pictures .wrapper .img2 , main .pictures .wrapper .img3{
-    width: 660px;
+    max-width: 660px;
     height: 430px;
     overflow: hidden;
 }
@@ -289,7 +292,7 @@ footer{
     & .right{
         font: 600 24px Inter;
         color: #E1D4C9;
-        width: 530px;
+        max-width: 530px;
         text-align: left;
         & h4{
             margin-bottom: 40px;
@@ -312,5 +315,184 @@ footer{
         & p:last-of-type:hover{
             width: 50%;
         }
+    }
+}
+header .link_menu{
+    border: 0;
+}
+@media screen and (max-width:1340px) {
+    body{
+        padding: 0 40px;
+    }
+    header{
+        display: block;
+        & .logo_wrapper{
+            margin-left: 40px;
+        }
+        /* & .links{
+            display: block;
+            font: 600 32px Inter;
+            line-height: 40px;
+            text-align: center;
+            & p:not(:last-of-type)
+            {
+                margin-bottom: 60px;
+            }
+        }
+        & .link_menu {
+            margin-top: 100px;
+            margin-left: 45%;
+            & p{
+                font: 600 32px Inter;
+                line-height: 40px;
+            }
+            & img{
+                width: 40px;
+                height: 40px;
+            }
+        } */
+        & .links{
+            display: none;
+        }
+        & .link_menu{
+            display: none;
+        }
+        & .active{
+            display: inline;
+        }
+        & .active_menu{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .pictures .img2, .pictures .img3{
+        display: none;
+    }
+    main .pictures .wrapper{
+        flex-wrap: wrap;
+        & .left{
+            margin: 0 auto;
+        }
+        & .right{
+            margin: 0 auto;
+        }
+    }
+    main .apps{
+        flex-wrap: wrap;
+        margin-top: 100px;
+        & .left{
+            margin: 0 auto;
+        }
+        & .right{
+            margin: 0 auto;
+        }
+    }
+    footer{
+        flex-direction:column;
+        & .right{
+            margin-top: 100px;
+            & p:hover{
+                width: 70%;
+            }
+            & p:last-of-type:hover{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width:725px){
+    main .previe{
+        padding: 60px 16px;
+        height: auto;
+        & .text{
+            width: 100%;
+            & h2{
+                font:600 42px Inter;
+            }
+            & p{
+                font: 400 16px Inter;
+            }
+        }
+    }
+    main .coffee_slider{
+         & .left , .right{
+            display: none;
+        }
+        & h2{
+            font-size: 32px;
+        }
+        & .center .center_img img{
+            width: 348px;
+            height: 348px;
+        }
+        & .center .center_text{
+            width: 50%;
+            margin: 0 auto;
+           
+        }
+    }
+    main  .pictures{
+        & h2 {
+            font-size: 32px;
+        }
+        & .left{
+            height: 360px;
+        }
+        & .right{
+            height: 360px;
+        }
+        & .img1 img {
+            width: 348px;
+        }
+        & .img4 {
+            margin-top:0 ;
+            & img {
+                width: 348px;
+            }
+        }
+    }
+    main .apps{
+        & .left{
+           & h2{
+                font-size: 32px;
+           }
+           & .buttons{
+            display: block;
+                & button:first-of-type{
+                    margin-bottom: 20px;
+                }
+           }
+        }
+        & .right{
+            /* margin-left: 40px; */
+            & img{
+                width: 348px;
+                height: 348px;
+            }
+        }
+    }
+    footer{
+        & .left{
+            & h2{
+                font-size: 32px;
+            }
+            & .buttons{
+                & button:nth-last-of-type(2)
+                {
+                    margin: 0 12px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:390px){
+    body{
+        padding: 10px;
+    }
+    header .logo_wrapper{
+        margin-left: 10px;
+    }
+    footer{
+        padding: 60px 16px;
     }
 }
