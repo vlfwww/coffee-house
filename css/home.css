@@ -159,7 +159,7 @@ main .coffee_slider .center  .line{
         width: 40px;
         border-radius: 100px;
     }
-    & p:first-of-type{
+    & .brown{
         border-bottom:4px solid #665F55 ;
     }
     & p:nth-of-type(2)
