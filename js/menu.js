@@ -156,11 +156,22 @@ const list = document.querySelector(".menu");
 const modal = document.querySelector(".modal");
 const name_ = document.querySelector(".modal h2");
 const desc = document.querySelector(".modal .description");
-const category = document.querySelector(".modal .category");
+const img = document.querySelector(".modal .left img");
+const price = document.querySelector(".modal .right .cost .right");
+const gram = ['50 g', '100 g', '200 g'];
+const addDes = ['Berries', 'Nuts', 'Jam']; 
+const ml = ['200 ml', '300 ml', '400 ml'];
+const addCoffee = ['Sugar', 'Cream', 'Syrup']; 
+const addTea = ['Sugar', 'Lemon', 'Honey']; 
+const desGram = document.querySelectorAll('.modal .right .size .block .right');
+const desAd = document.querySelectorAll('.modal .right .add .block .right');
 
 function updateMenu(category) {
+  let flagDessert = false; 
+  let flagDrink = false;   
   const newarr = items.filter((el) => el.category === category);
   list.innerHTML = "";
+
   newarr.forEach((el) => {
     list.innerHTML += `
             <div class="menu_item">
@@ -171,21 +182,54 @@ function updateMenu(category) {
                     <h3>${el.cost}</h3>
                 </div>
             </div>`;
+
+    if (el.category === 'Десерт') {
+      flagDessert = true; 
+    } else {
+      flagDrink = true; 
+    }
   });
 
-  document.querySelectorAll(".menu_item").forEach((el,index) =>
+  document.querySelectorAll(".menu_item").forEach((el, index) =>
     el.addEventListener("click", (event) => {
-      modal.style.display = "block";
+      modal.style.display = "flex";
+      document.body.classList.add('modal-open'); 
       name_.textContent = newarr[index].name;
       desc.textContent = newarr[index].description;
-      category.textContent = newarr[index].category;
+      price.textContent = newarr[index].cost;
+      img.src = newarr[index].img;
+
+      if (flagDessert) {
+        desGram.forEach((el, i) => {
+          el.textContent = gram[i];
+        });
+        desAd.forEach((el, i) => {
+          el.textContent = addDes[i];
+        });
+      } else if (flagDrink) {
+        desGram.forEach((el, i) => {
+          el.textContent = ml[i];
+        });
+        if (newarr[index].category === 'Кофе') {
+          desAd.forEach((el, i) => {
+            el.textContent = addCoffee[i]; 
+          });
+        } else if (newarr[index].category === 'Чай') {
+          desAd.forEach((el, i) => {
+            el.textContent = addTea[i]; 
+          });
+        }
+      }
+
       event.stopPropagation();
     })
   );
 
   document.querySelector(".close").addEventListener("click", () => {
     modal.style.display = "none";
-    flag = false;
+    document.body.classList.remove('modal-open'); 
+    flagDessert = false;
+    flagDrink = false;
   });
 }
 
